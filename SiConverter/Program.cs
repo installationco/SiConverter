@@ -6,12 +6,17 @@ class Program {
         var sourceUrl = args[0];
         var resultPath = args[2];
 
-        var parser = new Parser();
-        var content = parser.parseFile(sourceUrl);
+//        var parser = new Parser();
+//        var content = parser.parseFile(sourceUrl);
 
         var generator = new Generator();
-        var result = generator.processContent(content);
+        // Раскомментим, когда будет распаршеный контент
+//        var result = generator.processContent(content);
 
-        File.WriteAllText(resultPath, result);
+        // А это закомментим
+        var mockContent = MockContent.get();
+        var result = generator.processContent(mockContent);
+
+        Packer.pack(result, resultPath);
     }
 }

@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generator\Generator.cs" />
+    <Compile Include="MockContent.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Topic.cs" />
+    <Compile Include="Packer.cs" />
     <Compile Include="Parser\Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
