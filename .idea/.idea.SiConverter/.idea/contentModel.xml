@@ -14,8 +14,10 @@
           <e p="Topic.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Packer.cs" t="Include" />
         <e p="Parser" t="Include">
+          <e p="DataManger.cs" t="Include" />
           <e p="Parser.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />

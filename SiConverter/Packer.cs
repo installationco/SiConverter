@@ -11,8 +11,11 @@ class Packer {
         File.WriteAllText(dir2.FullName + "/authors.xml", generateAuthors());
         File.WriteAllText(dir2.FullName + "/sources.xml", generateSources());
 
+        if (File.Exists(path)) {
+            File.Delete(path);
+        }
         ZipFile.CreateFromDirectory(dir.FullName, path);
-        
+
         return true;
     }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Security;
 
 public class Generator {
     public Generator() { }
@@ -43,14 +44,14 @@ public class Generator {
     }
     
     string generateTopic(Topic topic) {
-        var result = $"<theme name=\"{topic.name}\"><questions>\n";
+        var result = $"<theme name=\"{SecurityElement.Escape(topic.name)}\"><questions>\n";
         result += String.Join("\n", topic.questions.Select(generateQuestion));
         result += "</questions></theme>\n";
         return result;
     }
 
     string generateQuestion(Question q) {
-        return $"<question price=\"{q.cost}\"><scenario><atom>{q.question}</atom></scenario><right><answer>{q.answer}</answer></right></question>\n";
+        return $"<question price=\"{q.cost}\"><scenario><atom>{SecurityElement.Escape(q.question)}</atom></scenario><right><answer>{SecurityElement.Escape(q.answer)}</answer></right></question>\n";
     }
     
 }
